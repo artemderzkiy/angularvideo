@@ -1,0 +1,42 @@
+ @font-face {
+ 	font-family: OpenSans; /* Гарнитура шрифта */
+ 	src: url(fonts/2211.ttf); /* Путь к файлу со шрифтом */
+ }
+ .line {
+    width: 1024px;
+    margin: 0 auto;
+    border-bottom: 1px #9f9b96 solid;
+}
+ .header-cont {
+ 	display: flex;
+ 	height: 100px;
+ 	background-color: #3f51b5;
+ }
+ .header-cont-text {
+ 	font-family: OpenSans;
+ 	font-size: 19px;
+ 	color: white;
+ }
+.button 
+{
+	font-family: OpenSans;
+ 	font-size: 10px;
+ 	height: 40px;
+ 	width: 130px;
+ 	border-radius: 5px;
+}
+
+ .button-login
+ {
+ 	background-color: #f6511e;
+ 	color: white;
+ 	
+ }
+
+  .button-cancel
+ {
+ 	background-color: #ffffff;
+ 	color: #f6511e;
+ 	border-color: #f6511e
+ 
+ }
