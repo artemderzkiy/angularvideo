@@ -1,0 +1,40 @@
+{
+  "videos" : [ {
+    "id" : "1",
+    "title" : "parasha",
+    "url" : "http://stackoverflow.com/questions/22537311/angular-ui-router-login-authentication?answertab=votes#tab-top",
+    "nameUser" : "Artem"
+  }, {
+    "id" : "2",
+    "title" : "govno",
+    "url" : "http://stackoverflow.com/questions/22537311/angular-ui-router-login-authentication?answertab=votes#tab-top",
+    "nameUser" : "Artem"
+  }, {
+    "id" : "3",
+    "title" : "dryan",
+    "url" : "http://stackoverflow.com/questions/22537311/angular-ui-router-login-authentication?answertab=votes#tab-top",
+    "nameUser" : "Artem"
+  },{
+    "id" : "4",
+    "title" : "fUUUUUU",
+    "url" : "http://stackoverflow.com/questions/22537311/angular-ui-router-login-authentication?answertab=votes#tab-top",
+    "nameUser" : "Artem"
+  }, {
+    "id" : "5",
+    "title" : "awful",
+    "url" : "http://stackoverflow.com/questions/22537311/angular-ui-router-login-authentication?answertab=votes#tab-top",
+    "nameUser" : "Artem"
+  } ],
+  "users" : {
+    "users" : [ {
+      "nameUser" : "Artem"
+    }, {
+      "nameUser" : "Grigoriy"
+    }, {
+      "nameUser" : "Dmitriy"
+    }, {
+      "nameUser" : "Ivan"
+    } ]
+  }
+  
+}

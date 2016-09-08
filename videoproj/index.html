@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app' data-framework="firebase">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<title>Video Angular</title>
+</head>
+<body >
+	<header>
+		<div class="container">
+			<div class="header-cont">
+				<h1 class="header-cont-text">FRONTEND 
+					<i class="glyphicon glyphicon-play"></i>
+					VIDEO
+				</h1>
+				<div class="flex-auth">
+					<img src="css/ava.jpg" alt="..." class="img-circle">
+					<div class="flex-auth-text">
+						<span>Hello</span>
+					</br>
+					<a class="flex-auth-text-logout">logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<section>          
+	<div class="container">
+		<div ui-view></div> 
+	</div> 
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js" ></script>
+
+<script type="text/javascript" src="js/app/modules/main.module.js"></script>
+<script type="text/javascript" src="js/app/configs/constants/url.constants.js"></script>
+<script type="text/javascript" src="js/app/configs/router.config.js"></script>
+<script type="text/javascript" src="js/app/services/main.service.js"></script>
+
+<script type="text/javascript" src="js/app/factories/main.factory.js"></script>
+<script type="text/javascript" src="js/appmodule/app.module.js"></script>
+<script type="text/javascript" src="js/auth/authCtrl.js"></script>
+<script type="text/javascript" src="js/items/itemsCtrl.js"></script>
+<script type="text/javascript" src="js/add/addCtrl.js"></script>
+</body>
+</html>
+<!--
+<script type="text/javascript" src="js/appcontroller/main.controller.js"></script>
+
+-->

@@ -2,29 +2,71 @@
  	font-family: OpenSans; /* Гарнитура шрифта */
  	src: url(fonts/2211.ttf); /* Путь к файлу со шрифтом */
  }
- .line {
-    width: 1024px;
-    margin: 0 auto;
-    border-bottom: 1px #9f9b96 solid;
-}
- .header-cont {
- 	display: flex;
- 	height: 100px;
+ html {
+ 	font-family: OpenSans;
+ }
+ header {
  	background-color: #3f51b5;
  }
- .header-cont-text {
- 	font-family: OpenSans;
- 	font-size: 19px;
+ a {
+ 	cursor: pointer;
+ }
+
+
+ .line {
+ 	width: 1024px;
+ 	margin: 0 auto;
+ 	border-bottom: 1px #9f9b96 solid;
+ }
+ .header-cont { 
+ 	display: flex;
+ 	justify-content: space-between;
+ 	vertical-align: middle; 	
+ 	height: 100px;
+ 	
+ 	padding: 10px;
+ 	
+ 	align-items: center;
  	color: white;
  }
-.button 
-{
-	font-family: OpenSans;
+ .header-cont-text {
+ 	
+ 	font-size: 19px;
+ 	
+ }
+
+ .flex-auth {
+ 	display: flex;
+ 	align-items: center;
+
+ }
+ .flex-auth-text { 	
+ 	padding: 10px;
+ }
+ .flex-auth-text-logout
+ {
+ 	color: white;
+ 	text-decoration: none;
+ 	
+ }
+ .img-circle {
+ 	height:50px;
+ 	width:50px;
+ }
+ .form_size {
+ 	width: 400px;
+ 	margin: 0 auto;
+ }
+
+ .button 
+ {
+
  	font-size: 10px;
  	height: 40px;
  	width: 130px;
  	border-radius: 5px;
-}
+ 	padding: 10px;
+ }
 
  .button-login
  {
@@ -33,10 +75,32 @@
  	
  }
 
-  .button-cancel
+ .button-cancel
  {
  	background-color: #ffffff;
  	color: #f6511e;
- 	border-color: #f6511e
- 
+ 	border-color: #f6511e;
+ }
+ .button-cancel_disabled 
+ {
+ 	cursor: not-allowed;
+ 	opacity: 0.5; 	
+ }
+ .help-block
+ {
+ 	color: red;
+ }
+ .manage-group {
+ 	display: flex;
+ 	justify-content: space-between;
+ }
+ .input-group {
+ 	width: 370px;
+ 	position: relative;	
+ }
+ .input-group-addon {
+ 	background-color: white;
+ }
+ .table {
+ 	margin-top: 30px;
  }

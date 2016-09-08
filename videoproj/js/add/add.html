@@ -1,0 +1,41 @@
+
+<div class="form_size">
+	<h1 >Add New Course</h1>
+	<form  name="add" >
+		<div class="class="line" ">
+			<div class="form-group" ng-class="{ 'has-error' : add.title.$invalid && !add.title.$pristine }">
+				<label>Course Title *:</label>
+				<input type="text" name="title" class="form-control"  ng-model="model.selected.title" ng-minlength="3" ng-maxlength="15" required ">
+				<p ng-show="add.title.$error.minlength" class="help-block">title is too short.</p>
+				<p ng-show="add.title.$error.maxlength" class="help-block">title is too long.</p>
+			</div >
+
+			<div class="form-group" ng-class="{ 'has-error' : add.link.$invalid && !add.link.$pristine }">
+				<label>Course Link *</label>
+				<input type="text" name="link" class="form-control"  ng-model="model.selected.link"  required ">
+				<p ng-show="add.link.$error.minlength" class="help-block">link is too short.</p>
+				<p ng-show="add.link.$error.maxlength" class="help-block">link is too long.</p>
+			</div >
+
+			<div class="form-group" ng-class="{ 'has-error' : add.author.$invalid && !add.author.$pristine }" >
+				<label>Author *</label>
+				<select name="author" class="form-control" ng-model="model.selected.nameUser" ng-minlength="2"  required>
+					<option ng-repeat="user in model.users" value={{user.nameUser}} >{{user.nameUser}}</option>
+				</select>
+				<p ng-show="add.author.$error.minlength" class="help-block">You didn't choose anything</p>		
+			</div>
+
+			<div class="form-group" ng-class="{ 'has-error' : add.duration.$invalid && !add.duration.$pristine }">
+				<label>Duration</label>
+				<input type="text" name="duration" class="form-control"  ng-model="model.selected.duration" ng-minlength="3" ng-maxlength="15" >
+				<p ng-show="add.duration.$error.minlength" class="help-block">link is too short.</p>
+				<p ng-show="add.duration.$error.maxlength" class="help-block">link is too long.</p>
+			</div >
+		</div>
+
+		<a  ui-sref="items" ui-sref-active="active"><button class="button button-login" ng-click="save(model.title)" ng-disabled="form.$invalid"> Add</button></a>
+		<a  ui-sref="items" ui-sref-active="active"><button class="button button-cancel"> Cancel</button> </a>
+		
+
+	</form>
+</div>

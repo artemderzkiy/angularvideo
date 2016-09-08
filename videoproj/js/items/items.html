@@ -1,0 +1,46 @@
+
+<div>
+	<h1 >Courses</h1>
+	<div class="manage-group">
+		<div class="input-group">		
+			<input type="text" class="form-control" placeholder="type your phrase" ng-model="searchText.title" >
+			<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+		</div>
+		<div>
+			
+			<button class=" button button-cancel" ng-class="mayArchive ? 'button button-cancel' : 'button button-cancel button-cancel_disabled  ' " ng-click="archive()" ng-disabled="!mayArchive">Archive Selected</button> 
+			<a  ui-sref="add" ui-sref-active="active"><button class="button button-login"  > Add New</button></a>
+		</div>
+	</div>
+	<div>
+
+		<table class="table table-hover">
+			<tr>
+				<th><input type="checkbox" ng-click="switchAll()"></th>
+				<th>ID</th>
+				<th>
+					<a ng-click="sortType = 'title'; sortReverse = !sortReverse">
+						Title
+						<i ng-show="sortType == 'title' && !sortReverse" class="glyphicon glyphicon-arrow-up"></i>
+						<i ng-show="sortType == 'title' && sortReverse" class="glyphicon glyphicon-arrow-down"></i>
+					</a>
+				</th>
+				<th>Author</th>
+				<th>Duration</th>
+				<th>Actions</th>
+			</tr>
+			<tr ng-repeat="video in model.videos | filter:searchText |orderBy:sortType:!sortReverse">
+				<th><input type="checkbox" ng-model="video.checked" ng-change="checkChecked()"></th>
+				<th>{{video.id}}</th>				
+				<th><a href={{video.url}} >{{video.title}}</a></th>
+				<th>{{video.nameUser}}</th>
+				<th>{{video.duration}}</th>
+				<th>
+					<a ng-show="!video.archived" ui-sref="edit" ui-sref-active="active">Edit</a>
+					<a ng-show="!video.archived" ng-click="remove(video)">Delete</a>
+					<a ng-show="video.archived" ng-click="unarchive(video)">Unarchive</a>
+
+				</th>
+			</tr>
+		</table>
+	</div>
