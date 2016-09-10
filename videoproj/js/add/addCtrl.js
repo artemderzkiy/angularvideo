@@ -3,12 +3,11 @@
 	angular
 	.module('app')
 	.controller('addCtrl', addCtrl)
-	addCtrl.$inject=['$scope', 'VideoFac', '$http'];
-	function addCtrl($scope,VideoFac,$http) {
+	addCtrl.$inject=['$scope', 'VideoFac', '$http','$state'];
+	function addCtrl($scope,VideoFac,$http,$state) {
 		
 		$scope.model = {		
-			selected: {},
-			currentItem: undefined,
+			
 			title : ""
 
 		}
@@ -36,7 +35,12 @@
 
 		}
 
-
+jQuery(function($){
+	 $.mask.definitions['~']='[0-6]';
+	 $.mask.definitions['~']='[0-6]';
+   $("#durationid").mask("99:~9:~9");
+  
+});
 
 		//method to add item , to choose selected item
 		$scope.add = function () {
@@ -46,7 +50,7 @@
 		}
 //method for editing and adding item, works with selected and current item if they were chosen
 $scope.save = function () {
-	console.log("Saving item");    
+	console.log("Saving item");   
 
 
 	if($scope.model.currentItem != undefined)
@@ -55,7 +59,8 @@ $scope.save = function () {
 		$scope.model.currentItem.title = $scope.model.selected.title;
 		$scope.model.currentItem.link = $scope.model.selected.link;
 		$scope.model.currentItem.nameUser = $scope.model.selected.nameUser;
-		$scope.model.currentItem.duration = $scope.model.selected.duration;		
+		$scope.model.currentItem.duration = $scope.model.selected.duration;
+
 		$http.put("https://epamvideo-17622.firebaseio.com/videos.json",  $scope.model.videos );
 		//$scope.reset();
 
@@ -73,12 +78,17 @@ $scope.save = function () {
 		$scope.model.videos.push($scope.model.selected);
 		console.log("Adding item");  
 		console.log($scope.model.videos.length);  
+
 		$http.put("https://epamvideo-17622.firebaseio.com/videos.json",  $scope.model.videos );
-		//$scope.reset();
+		setTimeout(function() {
+       $state.go('items');// сработает после onclick
+    }, 500);
+		
 	}
 	//$scope.showme=false;
 	//$scope.end=false;
 };	
+
 
 }
 })()

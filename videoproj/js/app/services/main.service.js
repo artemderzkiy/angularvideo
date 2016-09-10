@@ -12,7 +12,7 @@
 		function getData(url) {
 			return $http.get(url)
 			.then(function resolve(response) {
-				console.log('im in service');
+				
 				return response.data
 			})
 			.catch(function reject(error) {

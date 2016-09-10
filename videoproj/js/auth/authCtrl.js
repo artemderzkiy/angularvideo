@@ -3,25 +3,24 @@
 	angular
 	.module('app')
 	.controller('authCtrl', authCtrl)
-	authCtrl.$inject=['$scope','$state']
-	function authCtrl($scope,$state) {
-		var login='hello';
-		var password='world';
-
-		$scope.authcheck=function() {
-
-
-			if (login==$scope.login && password==$scope.password)
+	authCtrl.$inject=['$scope','$state','loginFac']
+	function authCtrl($scope,$state,loginFac) {
+		
+		$scope.logInCtrl = function() {
+			var login = $scope.loginInp;
+			var password = $scope.passwordInp;
+			
+			loginFac.logIn(login,password);
+			console.log(login);
+			console.log(password);
+			$scope.loginInp='';
+			$scope.passwordInp='';
+			if (loginFac.isAuthed())
 			{
+				$scope.$emit('login');
 				$state.go('items');
-				$scope.login='';
-				$scope.password='';
-
-			}
-			else {
-				$scope.login='';
-				$scope.password='';
 			}
 		}
+
 	}
 })()

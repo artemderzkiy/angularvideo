@@ -2,7 +2,23 @@
  	font-family: OpenSans; /* Гарнитура шрифта */
  	src: url(fonts/2211.ttf); /* Путь к файлу со шрифтом */
  }
- html {
+
+ @font-face {
+ 	font-family: OpenSans_semibold; /* Гарнитура шрифта */
+ 	src: url(fonts/2212.ttf); /* Путь к файлу со шрифтом */
+ }
+
+ @font-face {
+ 	font-family: OpenSans_bold; /* Гарнитура шрифта */
+ 	src: url(fonts/2204.ttf); /* Путь к файлу со шрифтом */
+ }
+ @font-face {
+ 	font-family: Blisspro_medium; /* Гарнитура шрифта */
+ 	src: url(fonts/blisspro-medium.otf); /* Путь к файлу со шрифтом */
+ }
+
+
+ body {
  	font-family: OpenSans;
  }
  header {
@@ -10,6 +26,16 @@
  }
  a {
  	cursor: pointer;
+ }
+ h1 {
+ 	font-family: OpenSans_bold ;
+ 	font-size: 26px ;
+ 	margin-bottom: 40px;
+ 	margin-top: 40px;
+ }
+ label {
+ 	font-family: OpenSans;
+ 	color: #707386;
  }
 
 
@@ -30,8 +56,9 @@
  	color: white;
  }
  .header-cont-text {
- 	
- 	font-size: 19px;
+ 	font-family:Blisspro_medium;
+ 	font-size: 26px;
+
  	
  }
 
@@ -42,11 +69,14 @@
  }
  .flex-auth-text { 	
  	padding: 10px;
+ 	color: #b5c0fa;
  }
  .flex-auth-text-logout
  {
  	color: white;
  	text-decoration: none;
+ 	font-size: 10px;
+ 	color: #b5c0fa;
  	
  }
  .img-circle {
@@ -56,6 +86,7 @@
  .form_size {
  	width: 400px;
  	margin: 0 auto;
+ 	
  }
 
  .button 
@@ -65,13 +96,18 @@
  	height: 40px;
  	width: 130px;
  	border-radius: 5px;
- 	padding: 10px;
+ 	margin-right: 20px;
+ 	font-size: 13px; 	
+ 	font-family: OpenSans_semibold; 
+
+ 	
  }
 
  .button-login
  {
  	background-color: #f6511e;
  	color: white;
+ 	border : none;
  	
  }
 
@@ -85,6 +121,7 @@
  {
  	cursor: not-allowed;
  	opacity: 0.5; 	
+ 	background-color: #D3D3D3;
  }
  .help-block
  {
@@ -92,6 +129,7 @@
  }
  .manage-group {
  	display: flex;
+ 	flex-wrap: wrap;
  	justify-content: space-between;
  }
  .input-group {
@@ -104,3 +142,15 @@
  .table {
  	margin-top: 30px;
  }
+ .input-duration
+ {
+ 	width: 100px;
+ }
+
+.disabled{
+	color : #D3D3D3;	 
+}
+.disabled .titlelink {
+	color : #D3D3D3;
+	 pointer-events: none;
+}

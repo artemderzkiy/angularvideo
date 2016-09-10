@@ -36,11 +36,11 @@
 				switch(name){
 					case 'videos' :
 					vm.propers.videos=response;
-					console.log('im in factory videos');
+					
 					break;
 					case 'users' :
 					vm.propers.users=response;
-					console.log('im in factory users');
+					
 					break;
 				}
 				return response;

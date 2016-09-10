@@ -3,20 +3,29 @@
 	angular
 	.module('app')
 	.controller('videoCtrl', videoCtrl ) ;
-	videoCtrl.$inject = ['$http','$scope', 'VideoFac']
-	function videoCtrl($http, $scope, VideoFac) {
-		$scope.model = {};
-		todoHttp();
-		function todoHttp() {
+	videoCtrl.$inject = ['$scope','$state', 'loginFac']
+	function videoCtrl($scope,$state, loginFac) {
+		console.log('im in main controller')
+		
 
-			VideoFac.getDataByUrl('videos')
-			.then(function(response) {		
-				$scope.model.videos=response;
-				console.log(response)
-			})
-			.catch(function(e) {
-				console.log(e);
-			})	
+		
+
+		$scope.logOutCtrl = function() {
+			console.log("gde logout??")
+			loginFac.logOut();
+			$state.go('auth');
+			console.log("OPPA TUTOCHKI VON S SAITIKA ")
 		}
+
+		$scope.loginFlagCh=function() {
+			if (loginFac.isAuthed())
+			{
+				return true
+			}
+else 
+	return false
+		} 
+
+		
 	}
 })()

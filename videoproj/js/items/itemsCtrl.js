@@ -3,9 +3,9 @@
 	angular
 	.module('app')
 	.controller('itemsCtrl', itemsCtrl)
-	itemsCtrl.$inject=['$scope', 'VideoFac', '$http'];
-	function itemsCtrl($scope,VideoFac,$http) {
-		
+	itemsCtrl.$inject=['$rootScope','$scope', 'VideoFac', '$http'];
+	function itemsCtrl($rootScope,$scope,VideoFac,$http) {
+	
 		$scope.model = {		
 			selected: {},
 			currentItem: undefined,
@@ -84,6 +84,8 @@ $scope.archive = function() {
 		video.checked=false;
 		$http.put("https://epamvideo-17622.firebaseio.com/videos.json",  $scope.model.videos );
 	});
+	$scope.mayArchive = false;
+
 }	
 
 $scope.unarchive = function(video) {		
@@ -99,6 +101,13 @@ $scope.unarchive = function(video) {
 	$http.put("https://epamvideo-17622.firebaseio.com/videos.json",  $scope.model.videos );
 
 }	
+
+$rootScope.edit = function (video) {	   
+	$scope.model.selected = angular.copy(video);
+	$scope.model.currentItem = video;
+	console.log("suka");
+	console.log($scope.model.currentItem );
+};
 
 }
 })()

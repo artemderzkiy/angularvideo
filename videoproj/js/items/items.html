@@ -29,14 +29,14 @@
 				<th>Duration</th>
 				<th>Actions</th>
 			</tr>
-			<tr ng-repeat="video in model.videos | filter:searchText |orderBy:sortType:!sortReverse">
-				<th><input type="checkbox" ng-model="video.checked" ng-change="checkChecked()"></th>
+			<tr ng-repeat="video in model.videos | filter:searchText |orderBy:sortType:!sortReverse" ng-class="video.archived ? 'disabled':'' " >
+				<th><input type="checkbox" ng-model="video.checked" ng-change="checkChecked()" ng-disabled="video.archived"  ></th>
 				<th>{{video.id}}</th>				
-				<th><a href={{video.url}} >{{video.title}}</a></th>
+				<th><a target='_blank' class="titlelink" href="{{video.link}}" ng-disabled="video.archived" ng-class="video.archived ? 'disabled' : ''" >{{video.title}}</a></th>
 				<th>{{video.nameUser}}</th>
 				<th>{{video.duration}}</th>
 				<th>
-					<a ng-show="!video.archived" ui-sref="edit" ui-sref-active="active">Edit</a>
+					<a ng-show="!video.archived" ui-sref="edit({id: video.id})" ui-sref-active="active" ng-click="edit(video)">Edit</a>
 					<a ng-show="!video.archived" ng-click="remove(video)">Delete</a>
 					<a ng-show="video.archived" ng-click="unarchive(video)">Unarchive</a>
 

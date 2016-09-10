@@ -17,18 +17,21 @@
 		.state('items',{
 			url : '/items',
 			templateUrl:'js/items/items.html',
-			controller : 'itemsCtrl'	
+			controller : 'itemsCtrl',
+			needAuth : 'true'	
 		})
 		.state('add',{
 			url : '/add',
 			templateUrl:'js/add/add.html',
-			controller : 'addCtrl'
+			controller : 'addCtrl',
+			needAuth : 'true'	
 		})
 
 		.state('edit',{
-			url : '/edit/{id}',
+			url : '/edit/:id',
 			templateUrl:'js/add/add.html',
-			controller : 'addCtrl'
+			controller : 'addCtrl',
+			needAuth : 'true'	
 		})
 	}
 })()
