@@ -1,20 +1,20 @@
 
 <div class="form_size">
-	<h1 >Add New Course</h1>
+	<h1 >{{addOrEditH}}</h1>
 	<form  name="add" >
 		<div class="class="line" ">
-			<div class="form-group" ng-class="{ 'has-error' : add.title.$invalid && !add.title.$pristine }">
+			<div class="form-group" ng-class="{ 'has-error' : add.title.$invalid && add.title.$touched }">
 				<label>Course Title *</label>
-				<input type="text" name="title" class="form-control"  ng-model="model.selected.title" ng-minlength="3" ng-maxlength="15" ng-pattern="/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/" required ">
-				<p ng-show="add.title.$error.minlength" class="help-block">title is too short.</p>
-				<p ng-show="add.title.$error.maxlength" class="help-block">title is too long.</p>
+				<input type="text" name="title" ng-blur="" class="form-control"  ng-model="model.selected.title" ng-minlength="3" ng-maxlength="15" ng-pattern="/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/" required ">
+				<p ng-show="add.title.$error.minlength && add.title.$touched" class="help-block">title is too short.</p>
+				<p ng-show="add.title.$error.maxlength && add.title.$touched" class="help-block">title is too long.</p>
 				<p ng-show="add.title.$error.pattern" class="help-block">Type another title, it chould start with letter and contain letters and number</p>
 			</div >
 
-			<div class="form-group" ng-class="{ 'has-error' : add.link.$invalid && !add.link.$pristine }">
+			<div class="form-group" ng-class="{ 'has-error' : add.link.$invalid && add.link.$touched }">
 				<label>Course Link *</label>
 				<input type="text" name="link" class="form-control"  ng-model="model.selected.link" ng-pattern="/^(?:([a-z]+):(?:([a-z]*):)?\/\/)?(?:([^:@]*)(?::([^:@]*))?@)?((?:[a-z0-9_-]+\.)+[a-z]{2,}|localhost|(?:(?:[01]?\d\d?|2[0-4]\d|25[0-5])\.){3}(?:(?:[01]?\d\d?|2[0-4]\d|25[0-5])))(?::(\d+))?(?:([^:\?\#]+))?(?:\?([^\#]+))?(?:\#([^\s]+))?$/i" required ">
-				<p ng-show="add.link.$error.pattern" class="help-block">wrong url</p>
+				<p ng-show="add.link.$error.pattern && add.link.$touched" class="help-block">wrong url</p>
 				
 			</div >
 
@@ -23,19 +23,19 @@
 				<select name="author" class="form-control" ng-model="model.selected.nameUser"  required>
 					<option ng-repeat="user in model.users" value={{user.nameUser}} >{{user.nameUser}}</option>
 				</select>
-				<p ng-show="add.author.$error.minlength" class="help-block">You didn't choose anything</p>		
+				<p ng-show="add.author.$error.minlength && add.author.$touched" class="help-block">You didn't choose anything</p>		
 			</div>
 
-			<div class="form-group" ng-class="{ 'has-error' : add.duration.$invalid && !add.duration.$pristine }">
+			<div class="form-group" ng-class="{ 'has-error' : add.duration.$invalid && add.duration.$touched }">
 				<label>Course Duration</label>
-				<input id="durationid" type="text" name="duration" class="form-control input-duration"  ng-model="model.selected.duration" ng-minlength="3" ng-maxlength="15" >
+				<input id="durationid" type="text" name="duration" class="form-control input-duration"  ng-model="model.selected.duration" ng-minlength="3" ng-maxlength="15" ui-mask="99:99:99" ui-mask-placeholder ui-mask-placeholder-char="_" model-view-value="true">
 				<p ng-show="add.duration.$error.minlength" class="help-block">link is too short.</p>
 				<p ng-show="add.duration.$error.maxlength" class="help-block">link is too long.</p>
 			</div >
 		</div>
 
-		<button class="button button-login" ng-click="save(model.title)" ng-disabled="add.$invalid"> Add</button>
-		<a  ui-sref="items" ui-sref-active="active"><button class="button button-cancel"> Cancel</button> </a>
+		<button class="button button-login" ng-click="save(model.title)" ng-disabled="add.$invalid">{{addOrEditBut}}</button>
+		<a  ng-click="clearForm()" ui-sref="items" ui-sref-active="active" ><button class="button button-cancel" > Cancel</button> </a>
 		
 
 	</form>

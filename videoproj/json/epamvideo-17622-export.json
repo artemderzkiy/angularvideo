@@ -1,0 +1,73 @@
+{
+  "users" : {
+    "users" : [ {
+      "nameUser" : "Artem"
+    }, {
+      "nameUser" : "Grigoriy"
+    }, {
+      "nameUser" : "Dmitriy"
+    }, {
+      "nameUser" : "Ivan"
+    } ]
+  },
+  "videos" : [ {
+    "archived" : false,
+    "checked" : false,
+    "duration" : "45^45",
+    "id" : 5,
+    "link" : "https://www.youtube.com/watch?v=JFBKixkwkA4",
+    "nameUser" : "Grigoriy",
+    "title" : "youtube"
+  }, {
+    "archived" : false,
+    "checked" : false,
+    "duration" : "45^45",
+    "id" : 6,
+    "link" : "https://learn.javascript.ru/array-iteration",
+    "nameUser" : "Grigoriy",
+    "title" : "GovnoGoolge"
+  }, {
+    "archived" : false,
+    "checked" : false,
+    "duration" : "321321313",
+    "id" : 7,
+    "link" : "dwad",
+    "nameUser" : "Artem",
+    "title" : "312213213"
+  }, {
+    "archived" : false,
+    "checked" : false,
+    "duration" : "55:44",
+    "id" : 11,
+    "link" : "https://google.com",
+    "nameUser" : "Grigoriy",
+    "title" : "common"
+  }, {
+    "archived" : false,
+    "checked" : false,
+    "duration" : "55:67",
+    "id" : 12,
+    "link" : "https://google.com",
+    "nameUser" : "Grigoriy",
+    "title" : "google"
+  }, {
+    "archived" : false,
+    "checked" : false,
+    "id" : 5,
+    "link" : "http://govnokod.ru/",
+    "nameUser" : "Grigoriy",
+    "title" : "govnokod"
+  }, {
+    "archived" : true,
+    "checked" : false,
+    "id" : 6,
+    "link" : "https://google.com",
+    "nameUser" : "Artem",
+    "title" : "fsdfs"
+  }, {
+    "id" : 7,
+    "link" : "https://google.com",
+    "nameUser" : "Grigoriy",
+    "title" : "fafafafa"
+  } ]
+}

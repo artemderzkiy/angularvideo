@@ -15,7 +15,7 @@
 </head>
 <body >
 	<header>
-		<div class="container" ng-controller="videoCtrl">
+		<div class="container " ng-controller="videoCtrl" >
 			<div class="header-cont" >
 				<span class="header-cont-text">FRONTEND 
 					<i class="glyphicon glyphicon-play"></i>
@@ -31,8 +31,10 @@
 	</div> 
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="bower_components/angular-ui-mask/dist/mask.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js" ></script>
+
 <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 <script type="text/javascript" src="libs/maskedinput.js"></script>
 <script type="text/javascript" src="js/app/modules/main.module.js"></script>
@@ -40,7 +42,7 @@
 
 <script type="text/javascript" src="js/app/configs/router.config.js"></script>
 <script type="text/javascript" src="js/app/services/main.service.js"></script>
-
+<script type="text/javascript" src="js/app/services/edit.service.js"></script>
 <script type="text/javascript" src="js/app/factories/main.factory.js"></script>
 <script type="text/javascript" src="js/app/factories/login.fatory.js"></script>
 
@@ -50,6 +52,7 @@
 <script type="text/javascript" src="js/auth/authCtrl.js"></script>
 <script type="text/javascript" src="js/items/itemsCtrl.js"></script>
 <script type="text/javascript" src="js/add/addCtrl.js"></script>
+
 </body>
 </html>
 <!--

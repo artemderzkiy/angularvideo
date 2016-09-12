@@ -3,14 +3,15 @@
 	angular
 	.module('app')
 	.controller('itemsCtrl', itemsCtrl)
-	itemsCtrl.$inject=['$rootScope','$scope', 'VideoFac', '$http'];
-	function itemsCtrl($rootScope,$scope,VideoFac,$http) {
+	itemsCtrl.$inject=['$rootScope','$scope', 'VideoFac','editService', '$http'];
+	function itemsCtrl($rootScope,$scope,VideoFac,editService,$http) {
 	
 		$scope.model = {		
 			selected: {},
 			currentItem: undefined,
 			name : ""
 		},
+		//$rootScope.model.currentItem ={},
 		$scope.checked = false;
 		$scope.mayArchive = false;
 
@@ -85,6 +86,7 @@ $scope.archive = function() {
 		$http.put("https://epamvideo-17622.firebaseio.com/videos.json",  $scope.model.videos );
 	});
 	$scope.mayArchive = false;
+	
 
 }	
 
@@ -102,11 +104,13 @@ $scope.unarchive = function(video) {
 
 }	
 
-$rootScope.edit = function (video) {	   
+$scope.edit = function (video) {	   
 	$scope.model.selected = angular.copy(video);
 	$scope.model.currentItem = video;
-	console.log("suka");
-	console.log($scope.model.currentItem );
+editService.add($scope.model.currentItem);
+	//console.log("suka kak eto sdelat blya");
+	//console.log($scope.model.currentItem );
+	
 };
 
 }

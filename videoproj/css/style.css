@@ -147,10 +147,10 @@
  	width: 100px;
  }
 
-.disabled{
-	color : #D3D3D3;	 
-}
-.disabled .titlelink {
-	color : #D3D3D3;
-	 pointer-events: none;
-}
+ .disabled{
+ 	color : #D3D3D3;	 
+ }
+ .disabled .titlelink {
+ 	color : #D3D3D3;
+ 	pointer-events: none;
+ }
