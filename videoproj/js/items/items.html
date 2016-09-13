@@ -44,13 +44,24 @@
 			</tr>
 			
 		</table>
-		<h1>{{totalItems}}</h1>		
-		<pagination 
-		ng-model="currentPage"
-		total-items="totalItems"
-		max-size="maxSize"  
-		boundary-links="true">
-	</pagination>
+		<h1>Count of Videos : {{totalItems}}</h1>		
+		<pagination class="pagination-position"
+			ng-model="currentPage"
+			total-items="totalItems"
+			max-size="maxSize"  
+			boundary-links="true"
+			items-per-page="numPerPage">
+		</pagination>
+
+	<p>View</p><select ng-model="numPerPage" ng-change="setItemsPerPage(numPerPage)">
+	<option selected >3</option>
+	<option>5</option>
+	<option>10</option>
+	<option>20</option>
+	<option>30</option>
+	<option>40</option>
+	<option>50</option>
+</select> <p>records at a time.</p>
 
 
 
