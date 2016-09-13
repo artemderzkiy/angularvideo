@@ -3,7 +3,7 @@
 	'use strict'
 	
 	angular
-	.module('app',['main','ui.mask'])
+	.module('app',['main','ui.mask','ui.bootstrap'])
 	.run(LoginCheck)
 	LoginCheck.$inject=['$rootScope','$state','loginFac']
 	

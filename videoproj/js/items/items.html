@@ -29,7 +29,7 @@
 				<th>Duration</th>
 				<th>Actions</th>
 			</tr>
-			<tr ng-repeat="video in model.videos | filter:searchText |orderBy:sortType:!sortReverse" ng-class="video.archived ? 'disabled':'' " >
+			<tr ng-repeat="video in filteredVideos | filter:searchText |orderBy:sortType:!sortReverse" ng-class="video.archived ? 'disabled':'' " >
 				<th><input type="checkbox" ng-model="video.checked" ng-change="checkChecked()" ng-disabled="video.archived"  ></th>
 				<th>{{video.id}}</th>				
 				<th><a target='_blank' class="titlelink" href="{{video.link}}" ng-disabled="video.archived" ng-class="video.archived ? 'disabled' : ''" >{{video.title}}</a></th>
@@ -42,5 +42,17 @@
 
 				</th>
 			</tr>
+			
 		</table>
-	</div>
+		<h1>{{totalItems}}</h1>		
+		<pagination 
+		ng-model="currentPage"
+		total-items="totalItems"
+		max-size="maxSize"  
+		boundary-links="true">
+	</pagination>
+
+
+
+
+</div>
