@@ -13,12 +13,12 @@ var gulp       = require('gulp'),
     scss         = require('gulp-scss');
 
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('starter', ['connect', 'watch']);
 
 gulp.task('watch', function() {
-  gulp.watch('./*.html').on('change', bs.reload);
-  gulp.watch('./*.css').on('change', bs.reload);
-  gulp.watch('./*.js').on('change', bs.reload);
+  gulp.watch('./*/**.html').on('change', bs.reload);
+  gulp.watch('./*/**.css').on('change', bs.reload);
+  gulp.watch('./*/**.js').on('change', bs.reload);
 });
 
 gulp.task('connect', function() {
