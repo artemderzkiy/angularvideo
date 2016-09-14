@@ -159,3 +159,18 @@
  .input-duration {
  	width: 100px;
  }
+ .search {
+ 	position: relative;
+ 	color: #aaa;
+ 	font-size: 16px;
+ }
+ .search input {
+ 	width: 370px;
+ 	height: 40px;
+ 	text-indent: 10px;
+ }
+ .search .fa-search { 
+ 	position: absolute;
+ 	top: 10px;
+ 	right: 10px;
+ }
