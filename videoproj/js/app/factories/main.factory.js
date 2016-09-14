@@ -4,10 +4,8 @@
 	.module('main')
 	.factory('VideoFac',VideoFac)
 	VideoFac.$inject=['$q','FirebaseReq','VIDEOURL','USERURL'];
-
 	function VideoFac($q,FirebaseReq,VIDEOURL,USERURL) {
 		var vm ={};
-
 		vm.propers ={
 			videos : {},
 			users : {}
@@ -17,7 +15,6 @@
 		};
 		function getDataByUrl(name) {
 			var url='';
-
 			switch(name) {
 				case 'videos' :
 				url=VIDEOURL;
@@ -35,12 +32,10 @@
 			.then(function(response) {
 				switch(name){
 					case 'videos' :
-					vm.propers.videos=response;
-					
+					vm.propers.videos=response;					
 					break;
 					case 'users' :
-					vm.propers.users=response;
-					
+					vm.propers.users=response;					
 					break;
 				}
 				return response;
@@ -51,5 +46,4 @@
 		}
 		return vm.methods
 	}
-
 })();

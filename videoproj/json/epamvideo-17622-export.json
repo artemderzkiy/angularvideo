@@ -11,63 +11,63 @@
     } ]
   },
   "videos" : [ {
-    "archived" : false,
+    "archived" : true,
     "checked" : false,
-    "duration" : "45^45",
-    "id" : 5,
+    "duration" : "45:45:45",
+    "id" : 0,
     "link" : "https://www.youtube.com/watch?v=JFBKixkwkA4",
-    "nameUser" : "Grigoriy",
+    "nameUser" : "Artem",
     "title" : "youtube"
   }, {
     "archived" : false,
     "checked" : false,
-    "duration" : "45^45",
+    "duration" : "11:11:11",
     "id" : 6,
     "link" : "https://learn.javascript.ru/array-iteration",
     "nameUser" : "Grigoriy",
-    "title" : "GovnoGoolge"
+    "title" : "LearnJS"
   }, {
-    "archived" : false,
+    "archived" : true,
     "checked" : false,
-    "duration" : "321321313",
+    "duration" : "11:22:33",
     "id" : 7,
-    "link" : "dwad",
-    "nameUser" : "Artem",
-    "title" : "312213213"
+    "link" : "https://vk.com",
+    "nameUser" : "Dmitriy",
+    "title" : "VKcom"
   }, {
     "archived" : false,
     "checked" : false,
-    "duration" : "55:44",
+    "duration" : "55:44:33",
     "id" : 11,
-    "link" : "https://google.com",
+    "link" : "https://habrahabr.ru",
     "nameUser" : "Grigoriy",
-    "title" : "common"
+    "title" : "habrahabr"
   }, {
-    "archived" : false,
+    "archived" : true,
     "checked" : false,
-    "duration" : "55:67",
+    "duration" : "55:37:21",
     "id" : 12,
-    "link" : "https://google.com",
-    "nameUser" : "Grigoriy",
-    "title" : "google"
+    "link" : "https://ya.ru",
+    "nameUser" : "Dmitriy",
+    "title" : "yandex"
   }, {
     "archived" : false,
     "checked" : false,
     "id" : 5,
     "link" : "http://govnokod.ru/",
-    "nameUser" : "Grigoriy",
+    "nameUser" : "Ivan",
     "title" : "govnokod"
   }, {
     "archived" : true,
     "checked" : false,
     "id" : 6,
-    "link" : "https://google.com",
+    "link" : "https://vape.com",
     "nameUser" : "Artem",
-    "title" : "fsdfs"
+    "title" : "VAPEDOTCOM"
   }, {
     "id" : 7,
-    "link" : "https://google.com",
-    "nameUser" : "Grigoriy",
-    "title" : "fafafafa"
+    "link" : "https://github.com",
+    "nameUser" : "Ivan",
+    "title" : "github"
   } ]
 }

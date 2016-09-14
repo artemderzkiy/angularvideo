@@ -3,67 +3,66 @@
 	<h1 >Courses</h1>
 	<div class="manage-group">
 		<div class="input-group">		
-			<input type="text" class="form-control" placeholder="type your phrase" ng-model="searchText.title" >
+			<input type="text" class="form-control" placeholder="type your phrase for search" ng-model="searchText.title" >
 			<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
 		</div>
 		<div>
-			
+			<span>View </span>
+			<select ng-model="numPerPage" ng-change="setItemsPerPage(numPerPage)">
+				<option selected >3</option>
+				<option>5</option>
+				<option>10</option>
+				<option>20</option>
+				<option>30</option>
+				<option>40</option>
+				<option>50</option>
+			</select> 
+			<span> records at a time.</span>
+		</div>
+		<div>
 			<button class=" button button-cancel" ng-class="mayArchive ? 'button button-cancel' : 'button button-cancel button-cancel_disabled  ' " ng-click="archive()" ng-disabled="!mayArchive">Archive Selected</button> 
 			<a  ui-sref="add" ui-sref-active="active"><button class="button button-login"  > Add New</button></a>
 		</div>
 	</div>
 	<div>
-
 		<table class="table table-hover">
-			<tr>
-				<th><input type="checkbox" ng-click="switchAll()"></th>
-				<th>ID</th>
-				<th>
-					<a ng-click="sortType = 'title'; sortReverse = !sortReverse">
-						Title
-						<i ng-show="sortType == 'title' && !sortReverse" class="glyphicon glyphicon-arrow-up"></i>
-						<i ng-show="sortType == 'title' && sortReverse" class="glyphicon glyphicon-arrow-down"></i>
-					</a>
-				</th>
-				<th>Author</th>
-				<th>Duration</th>
-				<th>Actions</th>
-			</tr>
-			<tr ng-repeat="video in filteredVideos | filter:searchText |orderBy:sortType:!sortReverse" ng-class="video.archived ? 'disabled':'' " >
-				<th><input type="checkbox" ng-model="video.checked" ng-change="checkChecked()" ng-disabled="video.archived"  ></th>
-				<th>{{video.id}}</th>				
-				<th><a target='_blank' class="titlelink" href="{{video.link}}" ng-disabled="video.archived" ng-class="video.archived ? 'disabled' : ''" >{{video.title}}</a></th>
-				<th>{{video.nameUser}}</th>
-				<th>{{video.duration}}</th>
-				<th>
-					<a ng-show="!video.archived" ui-sref="edit({id: video.id})" ui-sref-active="active" ng-click="edit(video)">Edit</a>
-					<a ng-show="!video.archived" ng-click="remove(video)">Delete</a>
-					<a ng-show="video.archived" ng-click="unarchive(video)">Unarchive</a>
-
-				</th>
-			</tr>
-			
+			<thead>
+				<tr>
+					<th class=" col-check"><input type="checkbox" ng-click="switchAll()"></th>
+					<th class=" col-id">ID</th>
+					<th class=" col-title">
+						<a ng-click="sortType = 'title'; sortReverse = !sortReverse">
+							Title
+							<i ng-show="sortType == 'title' && !sortReverse" class="glyphicon glyphicon-arrow-up"></i>
+							<i ng-show="sortType == 'title' && sortReverse" class="glyphicon glyphicon-arrow-down"></i>
+						</a>
+					</th>
+					<th class=" col-author">Author</th>
+					<th class=" col-dur">Duration</th>
+					<th class=" col-but ">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="video in filteredVideos | filter:searchText |orderBy:sortType:!sortReverse" ng-class="video.archived ? 'disabled':'' " trackby $index >
+					<td class="col-check"><input type="checkbox" ng-model="video.checked" ng-change="checkChecked()" ng-disabled="video.archived"  ></td>
+					<td class="col-id">{{$index}}</td>				
+					<td class="col-title"><a target='_blank' class="titlelink" href="{{video.link}}" ng-disabled="video.archived" ng-class="video.archived ? 'disabled' : ''" >{{video.title}}</a></td>
+					<td class="col-author">{{video.nameUser}}</td>
+					<td class="col-dur">{{video.duration}}</td>
+					<td class="col-but ">
+						<a ng-show="!video.archived" ui-sref="edit({id: video.id})" ui-sref-active="active" ng-click="edit(video)">Edit</a>
+						<a ng-show="!video.archived" ng-click="remove(video)">Delete</a>
+						<a ng-show="video.archived" ng-click="unarchive(video)">Unarchive</a>
+					</td>
+				</tr>
+			</tbody>
 		</table>
 		<h1>Count of Videos : {{totalItems}}</h1>		
 		<pagination class="pagination-position"
-			ng-model="currentPage"
-			total-items="totalItems"
-			max-size="maxSize"  
-			boundary-links="true"
-			items-per-page="numPerPage">
-		</pagination>
-
-	<p>View</p><select ng-model="numPerPage" ng-change="setItemsPerPage(numPerPage)">
-	<option selected >3</option>
-	<option>5</option>
-	<option>10</option>
-	<option>20</option>
-	<option>30</option>
-	<option>40</option>
-	<option>50</option>
-</select> <p>records at a time.</p>
-
-
-
-
+		ng-model="currentPage"
+		total-items="totalItems"
+		max-size="maxSize"  
+		boundary-links="true"
+		items-per-page="numPerPage">
+	</pagination>
 </div>

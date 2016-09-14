@@ -2,12 +2,10 @@
  	font-family: OpenSans; /* Гарнитура шрифта */
  	src: url(fonts/2211.ttf); /* Путь к файлу со шрифтом */
  }
-
  @font-face {
  	font-family: OpenSans_semibold; /* Гарнитура шрифта */
  	src: url(fonts/2212.ttf); /* Путь к файлу со шрифтом */
  }
-
  @font-face {
  	font-family: OpenSans_bold; /* Гарнитура шрифта */
  	src: url(fonts/2204.ttf); /* Путь к файлу со шрифтом */
@@ -16,8 +14,6 @@
  	font-family: Blisspro_medium; /* Гарнитура шрифта */
  	src: url(fonts/blisspro-medium.otf); /* Путь к файлу со шрифтом */
  }
-
-
  body {
  	font-family: OpenSans;
  }
@@ -37,47 +33,61 @@
  	font-family: OpenSans;
  	color: #707386;
  }
-
-
- .line {
- 	width: 1024px;
- 	margin: 0 auto;
- 	border-bottom: 1px #9f9b96 solid;
+ th  {
+ 	font-family: OpenSans_semibold;
+ 	font-size: 14px; 	
+ }
+ td {
+ 	font-family: OpenSans;
+ 	font-size: 13px;
+ } 
+ .table>thead>tr>th {
+ 	border-bottom: 1px solid #ddd
+ } 
+ .col-check {
+ 	width: 80px;
+ }
+ .col-id {
+ 	width:80px;
+ }
+ .col-title {
+ 	width:410px;
+ }
+ .col-author {
+ 	width:200px;
+ }
+ .col-dur {
+ 	width:190px;
+ }
+ .col-but {
+ 	width: 130px;
  }
  .header-cont { 
  	display: flex;
  	justify-content: space-between;
  	vertical-align: middle; 	
- 	height: 100px;
- 	
- 	padding: 10px;
- 	
+ 	height: 100px; 	
+ 	padding: 10px; 	
  	align-items: center;
  	color: white;
  }
  .header-cont-text {
  	font-family:Blisspro_medium;
- 	font-size: 26px;
-
- 	
+ 	font-size: 26px; 	
  }
-
  .flex-auth {
  	display: flex;
  	align-items: center;
-
  }
  .flex-auth-text { 	
  	padding: 10px;
  	color: #b5c0fa;
  }
- .flex-auth-text-logout
- {
+ .flex-auth-text-logout {
  	color: white;
  	text-decoration: none;
  	font-size: 10px;
- 	color: #b5c0fa;
- 	
+ 	color: #b5c0fa; 	
  }
  .img-circle {
  	height:50px;
@@ -85,46 +95,35 @@
  }
  .form_size {
  	width: 400px;
- 	margin: 0 auto;
- 	
+ 	margin: 0 auto; 	
  }
-
- .button 
- {
-
+ .form-control {
+ 	border-radius: 0px;
+ }
+ .button  {
  	font-size: 10px;
  	height: 40px;
  	width: 130px;
  	border-radius: 5px;
  	margin-right: 20px;
  	font-size: 13px; 	
- 	font-family: OpenSans_semibold; 
-
- 	
+ 	font-family: OpenSans_semibold;  	
  }
-
- .button-login
- {
+ .button-login {
  	background-color: #f6511e;
  	color: white;
+ 	border : none; 	
+ }
+ .button-cancel {
+ 	background-color: #f6511e;
+ 	color: #ffffff;
  	border : none;
- 	
  }
-
- .button-cancel
- {
- 	background-color: #ffffff;
- 	color: #f6511e;
- 	border-color: #f6511e;
- }
- .button-cancel_disabled 
- {
+ .button-cancel_disabled {
  	cursor: not-allowed;
- 	opacity: 0.5; 	
- 	background-color: #D3D3D3;
+ 	color: #D3D3D3;
  }
- .help-block
- {
+ .help-block {
  	color: red;
  }
  .manage-group {
@@ -140,13 +139,8 @@
  	background-color: white;
  }
  .table {
- 	margin-top: 30px;
+ 	margin-top: 30px; 	
  }
- .input-duration
- {
- 	width: 100px;
- }
-
  .disabled{
  	color : #D3D3D3;	 
  }
@@ -154,8 +148,14 @@
  	color : #D3D3D3;
  	pointer-events: none;
  }
- .pagination-position
- {
+ .pagination-position {
  	display: flex;
-    align-items: center;
+ 	align-items: center;
+ }
+ .line {
+ 	border-bottom: #dfdfdf 2px  solid;	
+ 	margin-bottom: 20px;
+ }
+ .input-duration {
+ 	width: 100px;
  }

@@ -5,27 +5,19 @@
 	.controller('videoCtrl', videoCtrl ) ;
 	videoCtrl.$inject = ['$scope','$state', 'loginFac']
 	function videoCtrl($scope,$state, loginFac) {
-		console.log('im in main controller')
-		
-
-		
-
+		//method to logout and send user to auth
 		$scope.logOutCtrl = function() {
-			console.log("gde logout??")
 			loginFac.logOut();
-			$state.go('auth');
-			console.log("OPPA TUTOCHKI VON S SAITIKA ")
+			$state.go('auth');			
 		}
-
+		// login flag to check whether user is authed or not
 		$scope.loginFlagCh=function() {
 			if (loginFac.isAuthed())
 			{
 				return true
 			}
-else 
-	return false
-		} 
-
-		
+			else 
+				return false
+		}		
 	}
 })()
