@@ -16,6 +16,6 @@
 			<p ng-show="auth.password.$error.maxlength  && auth.password.$touched"" class="help-block">password is too long.</p>
 			<p ng-show="auth.title.$error.pattern  && auth.password.$touched"" class="help-block">Type another password, it chould start with letter and contain letters and number</p>
 		</div >
-		<button class="button button-login" ng-class="auth.$invalid ? 'button-cancel_disabled' : ''" ng-click="logInCtrl()" ng-disabled="auth.$invalid"> Login</button> 
+		<button class="button button-login" ng-class="auth.$invalid ? 'button-archive' : ''" ng-click="logInCtrl()" ng-disabled="auth.$invalid"> Login</button> 
 	</form>
 </div>
