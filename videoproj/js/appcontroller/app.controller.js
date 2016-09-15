@@ -8,11 +8,13 @@
 		//method to logout and send user to auth
 		$scope.logOutCtrl = function() {
 			loginFac.logOut();
+			localStorage.removeItem("loginedSession");
 			$state.go('auth');			
 		}
 		// login flag to check whether user is authed or not
 		$scope.loginFlagCh=function() {
-			if (loginFac.isAuthed())
+			var checkLocal =!!localStorage.getItem("loginedSession")
+			if (loginFac.isAuthed() || checkLocal)
 			{
 				return true
 			}

@@ -11,7 +11,10 @@
 			loginFac.logIn(login,password);
 			$scope.loginInp='';
 			$scope.passwordInp='';
-			if (loginFac.isAuthed())
+			var checkLocal =!!localStorage.getItem("loginedSession") ;
+
+			
+			if (loginFac.isAuthed() || checkLocal)
 			{
 				$scope.$emit('login');
 				$state.go('items');
@@ -19,3 +22,6 @@
 		}
 	}
 })()
+
+
+angular.fromJson(localStorage.getItem("loginedSession"));

@@ -17,7 +17,9 @@
 		function logIn(login,password) {
 			if (login==vm.login && password==vm.password)
 			{
+
 				vm.authed=true;
+				localStorage.setItem("loginedSession", "true");
 			}
 			else 
 			{
