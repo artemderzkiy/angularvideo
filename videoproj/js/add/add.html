@@ -23,7 +23,7 @@
 			</div>
 			<div class="form-group" ng-class="{ 'has-error' : add.duration.$invalid && add.duration.$touched }">
 				<label>Course Duration</label>
-				<input id="durationid" type="text" name="duration" class="form-control input-duration"  ng-model="model.selected.duration" ng-minlength="3" ng-maxlength="15" ui-mask="99:99:99" ui-mask-placeholder ui-mask-placeholder-char="_" model-view-value="true">
+				<input id="durationid" type="text" name="duration" class="form-control input-duration"  ng-model="model.selected.duration" ng-minlength="3" ng-maxlength="15" ui-mask="99:HM:HM" ui-options = "maskOptions" ui-mask-placeholder ui-mask-placeholder-char="_" model-view-value="true">
 				<p ng-show="add.duration.$error.minlength" class="help-block">link is too short.</p>
 				<p ng-show="add.duration.$error.maxlength" class="help-block">link is too long.</p>
 			</div>

@@ -11,6 +11,10 @@
 		}
 		$scope.addOrEditBut = 'Add';
 		$scope.addOrEditH = 'Add New Course';
+		$scope.maskOptions = {
+			maskDefinitions: 
+			{ 'M':/[0-9]/,'H':/[0-5]/ } 
+		}
 		var flag=false;
 		takeEditedModel();
 		todoHttp();	
