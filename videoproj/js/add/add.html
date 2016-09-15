@@ -28,7 +28,7 @@
 				<p ng-show="add.duration.$error.maxlength" class="help-block">link is too long.</p>
 			</div>
 		</div>
-		<button class="button button-login" ng-click="save(model.title)" ng-disabled="add.$invalid">{{addOrEditBut}}</button>
+		<button class="button button-login" ng-click="save(model.title)" ng-disabled="add.$invalid" ng-class="add.$invalid ? 'button-archive' : ''">{{addOrEditBut}}</button>
 		<a  ng-click="clearForm()" ui-sref="items" ui-sref-active="active" ><button class="button button-cancel" > Cancel</button></a>
 	</form>
 </div>
